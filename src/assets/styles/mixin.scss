@@ -1,0 +1,33 @@
+
+// 文本字体调用函数
+@mixin font-dpr($font-size){
+    fontfont-dpr-size: $font-size;
+
+    [data-dpr="2"] & {
+        font-size: $font-size * 2;
+    }
+
+    [data-dpr="3"] & {
+        font-size: $font-size * 3;
+    }
+}
+
+// 小图标使用
+@mixin bg-image($url){
+    background-image: url("imgs/" +$url + "@2x.png");
+    @media screen and(min-device-pixel-ratio:3),(-webkit-min-device-pixel-ratio:3){
+        background-image: url("imgs/" + $url + "@3x.png");
+    }
+
+}
+
+//暂时未用到
+@function px2em($px, $base-font-size: 75px) {
+    @if (unitless($px)) {
+        @warn "Assuming #{$px} to be in pixels, attempting to convert it into pixels for you";
+        @return px2em($px + 0px); // That may fail.
+    } @else if (unit($px) == em) {
+        @return $px;
+    }
+    @return ($px / $base-font-size) * 1em;
+}

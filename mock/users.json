@@ -1,0 +1,12 @@
+{
+    "zhangsan" : {
+        "id": "1",
+        "userName": "zhangsan",
+        "password": "123456" 
+    },
+    "lisi" : {
+        "id": "2",
+        "userName": "lisi",
+        "password": "123456" 
+    }
+}
